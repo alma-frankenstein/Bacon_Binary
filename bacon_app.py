@@ -1,7 +1,8 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template
 from forms import EncryptForm, DecryptForm
 from config import Config
-from bacon_cipher import encrypt_message, decrypt_message
+from bacon_cipher import plaintext_to_biliteral, biliteral_to_plaintext, change_font, decoy_to_biliteral
+from frankenstein import frankenstein
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -16,25 +17,22 @@ def show_encrypted_text():
     return ciphertext
 
 
-# @app.route('/word/<int:word_key>')
-# def word_by_key(word_key):
-#     word = dictionary_db[word_key]
-#     return word
-
 @app.route('/encrypt', methods = ['GET', 'POST'])
 def encrypt():
     form = EncryptForm()
     if form.is_submitted():
         plaintext_input = form.plaintext.data
-        ciphertext = encrypt_message(plaintext_input)
-        return render_template('encrypted.html', encrypted_text=ciphertext)
+        ciphertext = plaintext_to_biliteral(plaintext_input)
+        encrypted_decoy = change_font(frankenstein, ciphertext)
+        return render_template('encrypted.html', encrypted_text=encrypted_decoy)
     return render_template('encrypt.html', form=form)
 
 @app.route('/decrypt', methods = ['GET', 'POST'])
 def decrypt():
     form = DecryptForm()
     if form.is_submitted():
-        ciphertext_input = form.ciphertext.data
-        plaintext = decrypt_message(ciphertext_input)
-        return render_template('decrypted.html', decrypted_text=plaintext)
+        decoy = form.ciphertext.data
+        biliteral = decoy_to_biliteral(decoy)
+        decrypted_text = biliteral_to_plaintext(biliteral)
+        return render_template('decrypted.html', decrypted_text=decrypted_text)
     return render_template('decrypt.html', form=form)
