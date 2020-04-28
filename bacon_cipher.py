@@ -40,8 +40,30 @@ def decrypt_message(cipher_text):
 
     return decryption
 
-coded = encrypt_message(message)
-shortened = text[:len(message)*5]
-print(len(shortened))
-print(len(message)*5)
+
+def map_spaces(decoy_text, cipher_text):
+    """match spaces in cipher text to decoy text, return them both as lists"""
+    decoy_text = list(decoy_text)
+    cipher_text = list(cipher_text)
+    for index in range(len(decoy_text)):
+        if decoy_text[index] == " ":
+            cipher_text.insert(index, " ")
+    return decoy_text, cipher_text
+
+
+def change_font_size(decoy_text, cipher_text):
+    """from a/b binary to letters sizes in decoy text"""
+    decoy_text, cipher_text = map_spaces(decoy_text, cipher_text)
+    for index in range(len(cipher_text)):
+        if cipher_text[index] == 'a':
+            decoy_text[index] =decoy_text[index].lower()
+        elif cipher_text[index] == 'b':
+            print(index)
+            decoy_text[index]=decoy_text[index].upper()
+    decoy_text = ''.join(decoy_text)
+    return decoy_text
+
+print(change_font_size('well we had all these children out planting trees', 'aaabababaabaabb'))
+
+
 
