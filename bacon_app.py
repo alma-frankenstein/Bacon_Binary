@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from forms import EncryptForm, DecryptForm
 from config import Config
-from bacon_cipher import plaintext_to_biliteral, biliteral_to_plaintext, change_font, decoy_to_biliteral
+from bacon_cipher import plaintext_to_biliteral, biliteral_to_plaintext, biliteral_to_decoy, decoy_to_biliteral
 from frankenstein import frankenstein
 
 app = Flask(__name__)
@@ -23,7 +23,7 @@ def encrypt():
     if form.is_submitted():
         plaintext_input = form.plaintext.data
         ciphertext = plaintext_to_biliteral(plaintext_input)
-        encrypted_decoy = change_font(frankenstein, ciphertext)
+        encrypted_decoy = biliteral_to_decoy(frankenstein, ciphertext)
         return render_template('encrypted.html', encrypted_text=encrypted_decoy)
     return render_template('encrypt.html', form=form)
 
