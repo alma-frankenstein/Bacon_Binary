@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# _*_ coding: utf-8 _*_
+
+
 LETTERS_ONLY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 cipher = {'A': 'aaaaa', 'B': 'aaaab', 'C': 'aaaba', 'D': 'aaabb', 'E': 'aabaa', 'F': 'aabab', 'G': 'aabba',
