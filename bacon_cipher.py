@@ -5,8 +5,6 @@ cipher = {'A': 'aaaaa', 'B': 'aaaab', 'C': 'aaaba', 'D': 'aaabb', 'E': 'aabaa', 
 'P': 'abbbb','Q': 'baaaa', 'R': 'baaab', 'S': 'baaba', 'T': 'baabb', 'U': 'babaa', 'V': 'babab',
 'W': 'babba', 'X': 'babbb', 'Y': 'bbaaa', 'Z': 'bbaab'}
 
-# test_message = 'I feel at home in this chaos'
-from frankenstein import frankenstein
 
 def plaintext_to_biliteral(message):
     """plaintext to ciphertext"""
