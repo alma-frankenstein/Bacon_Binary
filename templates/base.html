@@ -7,8 +7,15 @@
     <h2>Bacon Binary</h2>
 </head>
 <body>
-<div><a href="/encrypt">encrypt a message</a>
-<a href="/decrypt">decrypt a message</a></div>
+<div>
+    <a href="/encrypt">encrypt a message</a>
+    <a href="/decrypt">decrypt a message</a>
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">login</a>
+    {% else %}
+    <a href="{{ url_for('logout') }}">logout</a>
+    {% endif %}
+</div>
 <hr>
 {% block content %}{% endblock %}
 
