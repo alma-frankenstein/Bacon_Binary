@@ -5,9 +5,10 @@
 LETTERS_ONLY = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 cipher = {'A': 'aaaaa', 'B': 'aaaab', 'C': 'aaaba', 'D': 'aaabb', 'E': 'aabaa', 'F': 'aabab', 'G': 'aabba',
-'H': 'aabbb', 'I': 'abaaa', 'J': 'abaab', 'K': 'ababa', 'L': 'ababb', 'M': 'abbaa', 'N': 'abbab', 'O': 'abbba',
-'P': 'abbbb','Q': 'baaaa', 'R': 'baaab', 'S': 'baaba', 'T': 'baabb', 'U': 'babaa', 'V': 'babab',
-'W': 'babba', 'X': 'babbb', 'Y': 'bbaaa', 'Z': 'bbaab'}
+          'H': 'aabbb', 'I': 'abaaa', 'J': 'abaab', 'K': 'ababa', 'L': 'ababb', 'M': 'abbaa', 'N': 'abbab',
+          'O': 'abbba',
+          'P': 'abbbb', 'Q': 'baaaa', 'R': 'baaab', 'S': 'baaba', 'T': 'baabb', 'U': 'babaa', 'V': 'babab',
+          'W': 'babba', 'X': 'babbb', 'Y': 'bbaaa', 'Z': 'bbaab'}
 
 
 def plaintext_to_biliteral(message):
@@ -67,10 +68,8 @@ def biliteral_to_decoy(decoy_text, cipher_text):
 
     for index in range(len(cipher_text)):
         if cipher_text[index] == 'a':
-            decoy_text[index] =decoy_text[index].lower()
+            decoy_text[index] = decoy_text[index].lower()
         elif cipher_text[index] == 'b':
-            decoy_text[index]=decoy_text[index].upper()
+            decoy_text[index] = decoy_text[index].upper()
     decoy_text = ''.join(decoy_text)
     return decoy_text
-
-
