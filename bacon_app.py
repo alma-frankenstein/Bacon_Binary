@@ -5,9 +5,11 @@
 
 from flask import Flask, render_template
 from bacon_cipher import plaintext_to_biliteral, biliteral_to_plaintext, biliteral_to_decoy, decoy_to_biliteral
+from config import Config
 from frankenstein import frankenstein
 
 app = Flask(__name__)
+app.config.from_object(Config)
 
 from forms import EncryptForm, DecryptForm
 
