@@ -3,7 +3,7 @@
 
 # combines __init__.py and app.py files from Grinberg tutorial
 
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, url_for, redirect
 from bacon_cipher import plaintext_to_biliteral, biliteral_to_plaintext, biliteral_to_decoy, decoy_to_biliteral
 from config import Config
 from frankenstein import frankenstein
@@ -25,9 +25,13 @@ def encrypt():
     form = EncryptForm()
     if form.is_submitted():
         plaintext_input = form.plaintext.data
-        ciphertext = plaintext_to_biliteral(plaintext_input)
-        encrypted_decoy = biliteral_to_decoy(frankenstein, ciphertext)
-        return render_template('encrypted.html', encrypted_text=encrypted_decoy)
+        if len(plaintext_input) <= 400:
+            ciphertext = plaintext_to_biliteral(plaintext_input)
+            encrypted_decoy = biliteral_to_decoy(frankenstein, ciphertext)
+            return render_template('encrypted.html', encrypted_text=encrypted_decoy)
+        else:
+            flash("message is too long")
+            return redirect(url_for('encrypt'))
     return render_template('encrypt.html', form=form)
 
 
