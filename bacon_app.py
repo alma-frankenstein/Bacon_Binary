@@ -31,6 +31,7 @@ def encrypt():
     return render_template('encrypt.html', form=form)
 
 
+
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
     form = DecryptForm()

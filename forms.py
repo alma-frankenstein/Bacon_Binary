@@ -6,12 +6,12 @@ from wtforms import TextAreaField, SubmitField
 
 
 class EncryptForm(FlaskForm):
-    plaintext = TextAreaField()
+    plaintext = TextAreaField('message to encrypt')
     ciphertext = TextAreaField()
     submit = SubmitField('encrypt')
 
 
 class DecryptForm(FlaskForm):
-    ciphertext = TextAreaField()
+    ciphertext = TextAreaField('text to decrypt')
     plaintext = TextAreaField()
     submit = SubmitField('decrypt')

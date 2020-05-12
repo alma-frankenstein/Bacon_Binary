@@ -2,9 +2,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Decrypt</h1>
+<h2>Decrypt</h2>
 <form action="" method="post" novalidate>
-    <p>{{ form.ciphertext }}<br>
+    <p>{{ form.ciphertext(rows='12',cols='44') }}<br>
         {{ form.ciphertext.label }}
     </p>
     <p>{{ form.submit() }}</p>

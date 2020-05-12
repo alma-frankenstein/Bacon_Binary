@@ -2,9 +2,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Encrypt</h1>
+<h2>Encrypt</h2>
 <form action="" method="post">
-    <p>{{ form.plaintext }}<br>
+    <p>{{ form.plaintext(rows='12',cols='44') }}<br>
         {{ form.plaintext.label }}
     </p>
     <p>{{ form.submit() }}</p>
