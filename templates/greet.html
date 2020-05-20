@@ -9,16 +9,27 @@ font-size: 66%;
 footnotes{
 font-size: 70%;
 text-align: left;
-padding: 40px;}
+}
+div{
+margin-left: 150px;
+margin-right: 150px;}
+div.text{
+line-height: 1.5em;
+text-align: left;
+padding: 18px;
+font-size: 16px;
+background-color: lightGray;}
 
 
 </style>
 
 <h2>Bacon Binary Encryption</h2>
+<div class="text">
 <p>The Bacon binary cipher was created by the Elizabethan nobleman Sir Francis Bacon,
     who is also credited with inventing the scientific method<sup>1</sup>. It's the predecessor of modern ASCII binary
     code, and an early example of steganography, the practice of concealing not just a message but the fact
     that the viewer is looking at a hidden message at all<sup>2</sup>.</p>
+
 <p>In Bacon's cipher, each letter of the alphabet corresponds to a five-character pattern, where each
     character can take one of two forms (what Bacon called a-forms and b-forms, and we would now call a bit).
     For instance, the letter 'B' maps to 'aaaab', and the letter 'C' maps to 'aaaba'. The genius of this cipher
@@ -28,16 +39,20 @@ padding: 40px;}
     the volume of notes in a song. There's even a documented example of a scientist altering the temperature
     of a fish habitat so that the fishs' otoliths—bones that add a layer each year like the rings of a tree—were
     encrypted to read, microscopically, 'hi mom'<sup>3</sup>.</p>
+
 <p>From the mid-1800's to the 1940's there was a fad to comb the
     plays of Shakespeare, using Bacon's cipher to look for secret messages or evidence that Sir Francis Bacon was the
     real author of Shakespeare's work. As an interesting historical aside, one of the foremost advocates of this
     conspiracy theory, Delia Bacon, happened to be a friend of Samuel Morse, inventor of
     Morse code.<sup>4,5</sup></p>
+
 <p>This site shows a trivial example of Bacon's encryption, mainly for illustration. The user is invited
     to enter a secret message, which will be encrypted into the text of Mary Wollstonecraft Shelley's
-    'Frankenstein'<sup>6</sup>. This same text can then be copied and decrypted, returning the original message.</p>
-<img src="otolith.jpeg" alt="otolith" width="259" height="194">
+    'Frankenstein'<sup>6</sup>. This same text can then be copied and decrypted, returning the original message.</p></div>
 
+<img src="otolith.jpeg" alt="otolith" title="Photo credit: NOAA/NMFS" width="259" height="194" />
+
+<div>
 <footnotes>
     <p><strong>1</strong> See en.wikipedia.org/wiki/Francis_Bacon. Accessed 15 March 2020.</p>
     <p><strong>2</strong> William Sherman, "How to Make Anything Signify Anything", <em>Cabinet Magazine</em>, vol. 40
@@ -50,5 +65,6 @@ padding: 40px;}
         it requires spaces between the signals. Bacon's cipher doesn't.</p>
     <p><strong>6</strong> Accessed from gutenberg.org.</p>
 </footnotes>
+    </div>
 
 {% endblock %}
