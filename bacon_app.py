@@ -14,7 +14,7 @@ app.config.from_object(Config)
 from forms import EncryptForm, DecryptForm
 
 
-@app.route('/bacon') # = 'index' in Grinberg. # TODO Put historical info here
+@app.route('/bacon')
 @app.route('/')
 def greet():
     return render_template('greet.html')
@@ -25,12 +25,12 @@ def encrypt():
     form = EncryptForm()
     if form.is_submitted():
         plaintext_input = form.plaintext.data
-        if len(plaintext_input) <= 400:
+        if len(plaintext_input) <= len(frankenstein)/5:
             ciphertext = plaintext_to_biliteral(plaintext_input)
             encrypted_decoy = biliteral_to_decoy(frankenstein, ciphertext)
             return render_template('encrypted.html', encrypted_text=encrypted_decoy)
         else:
-            flash("message is too long")
+            flash("The message is too long. Please enter a shorter message.")
             return redirect(url_for('encrypt'))
     return render_template('encrypt.html', form=form)
 
@@ -45,3 +45,11 @@ def decrypt():
         decrypted_text = biliteral_to_plaintext(biliteral)
         return render_template('decrypted.html', decrypted_text=decrypted_text)
     return render_template('decrypt.html', form=form)
+
+
+# TODO get images working
+# TODO polish look, text
+# TODO testing
+# TODO error if inmput plaintext is too long
+# TODO favicon (see teabagger site)
+# TODO rich text-- different word sizes instead of upper/lower

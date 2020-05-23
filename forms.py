@@ -6,7 +6,7 @@ from wtforms import TextAreaField, SubmitField
 
 
 class EncryptForm(FlaskForm):
-    plaintext = TextAreaField('message to encrypt up to 400 characters')
+    plaintext = TextAreaField('message to encrypt')
     ciphertext = TextAreaField()
     submit = SubmitField('encrypt')
 

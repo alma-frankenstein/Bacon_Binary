@@ -10,6 +10,10 @@ cipher = {'A': 'aaaaa', 'B': 'aaaab', 'C': 'aaaba', 'D': 'aaabb', 'E': 'aabaa', 
           'P': 'abbbb', 'Q': 'baaaa', 'R': 'baaab', 'S': 'baaba', 'T': 'baabb', 'U': 'babaa', 'V': 'babab',
           'W': 'babba', 'X': 'babbb', 'Y': 'bbaaa', 'Z': 'bbaab'}
 
+def read_and_split(file):
+    with open(file) as file_object:
+        content = file_object.read().split()
+    return content
 
 def plaintext_to_biliteral(message):
     """plaintext to ciphertext"""

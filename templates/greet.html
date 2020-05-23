@@ -11,13 +11,14 @@ font-size: 70%;
 text-align: left;
 }
 div{
-margin-left: 150px;
-margin-right: 150px;}
+margin-left: 160px;
+margin-right: 160px;
+}
 div.text{
 line-height: 1.5em;
 text-align: left;
 padding: 18px;
-font-size: 16px;
+font-size: 17px;
 background-color: lightGray;}
 
 
@@ -29,11 +30,14 @@ background-color: lightGray;}
     who is also credited with inventing the scientific method<sup>1</sup>. It's the predecessor of modern ASCII binary
     code, and an early example of steganography, the practice of concealing not just a message but the fact
     that the viewer is looking at a hidden message at all<sup>2</sup>.</p>
+</div>
+<img src="otolith.jpeg" alt="otolith" title="Photo credit: NOAA/NMFS" width="259" height="194" />
 
+<div class="text">
 <p>In Bacon's cipher, each letter of the alphabet corresponds to a five-character pattern, where each
     character can take one of two forms (what Bacon called a-forms and b-forms, and we would now call a bit).
     For instance, the letter 'B' maps to 'aaaab', and the letter 'C' maps to 'aaaba'. The genius of this cipher
-    is that the a-forms and b-forms can any two alternating forms, for example grey or black pixels in an image,
+    is that the a-forms and b-forms can any two distinct categories, like grey or black pixels in an image,
     a row of tulips and petunias in a flowerbed, or the color of threads in a shirt; a casual viewer wouldn't
     notice that they were looking at an encrypted message. The cipher can also be used in non-visual media, like
     the volume of notes in a song. There's even a documented example of a scientist altering the temperature
@@ -49,8 +53,6 @@ background-color: lightGray;}
 <p>This site shows a trivial example of Bacon's encryption, mainly for illustration. The user is invited
     to enter a secret message, which will be encrypted into the text of Mary Wollstonecraft Shelley's
     'Frankenstein'<sup>6</sup>. This same text can then be copied and decrypted, returning the original message.</p></div>
-
-<img src="otolith.jpeg" alt="otolith" title="Photo credit: NOAA/NMFS" width="259" height="194" />
 
 <div>
 <footnotes>
@@ -68,3 +70,4 @@ background-color: lightGray;}
     </div>
 
 {% endblock %}
+
