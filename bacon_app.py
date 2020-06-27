@@ -19,7 +19,6 @@ from forms import EncryptForm, DecryptForm
 def greet():
     return render_template('greet.html')
 
-
 @app.route('/encrypt', methods=['GET', 'POST'])
 def encrypt():
     form = EncryptForm()
@@ -34,8 +33,6 @@ def encrypt():
             return redirect(url_for('encrypt'))
     return render_template('encrypt.html', form=form)
 
-
-
 @app.route('/decrypt', methods=['GET', 'POST'])
 def decrypt():
     form = DecryptForm()
@@ -46,8 +43,6 @@ def decrypt():
         return render_template('decrypted.html', decrypted_text=decrypted_text)
     return render_template('decrypt.html', form=form)
 
-
-<<<<<<< HEAD
 @app.route('/register', methods=['GET','POST'])
 def register():
     if current_user.is_authenticated:
