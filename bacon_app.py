@@ -43,27 +43,4 @@ def decrypt():
         return render_template('decrypted.html', decrypted_text=decrypted_text)
     return render_template('decrypt.html', form=form)
 
-# @app.route('/register', methods=['GET','POST'])
-# def register():
-#     if current_user.is_authenticated:
-#         return redirect(url_for('greet'))
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         user = User(username=form.username.data)
-#         user.set_password(form.password.data)
-#         db.session.add(user)
-#         db.session.commit()
-#         flash('now you\'re registered!')
-#         return redirect(url_for('login'))
-#     return render_template('register.html', title='Register', form=form)
-
-# @app.route('/user/<username>')
-# @login_required
-# def user(username):
-#     user = User.query.filter_by(username=username).first_or_404()
-#     posts = [
-#         {'author': user, 'body': 'test post 1'},
-#         {'author': user, 'body': 'test post 1'},
-#     ]
-#     return render_template('user.html', user=user, posts=posts)
 
