@@ -2,9 +2,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Encrypt</h1>
+<h2>Encrypt</h2>
 <form action="" method="post">
-    <p>{{ form.plaintext }}<br>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <p>{{ form.plaintext(rows='20',cols='60') }}<br>
         {{ form.plaintext.label }}
     </p>
     <p>{{ form.submit() }}</p>
