@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
     <meta charset="UTF-8">
-    <title>Bacon</title>
-    <h2>Bacon Binary</h2>
+    <title>Bacon Binary</title>
+    <style type="text/css">
+    body {
+    background-color: silver;
+    text-align: center;
+    font-family: Helvetica, Optima, Verdana, sans-serif;}
+    .link {
+    padding-right: 1em;
+    color: #CC0000;
+    text-align: center;}
+
+
+    </style>
 </head>
 <body>
-<div><a href="/encrypt">encrypt a message</a>
-<a href="/decrypt">decrypt a message</a></div>
+<div>
+<<<<<<< HEAD
+    <a href="/encrypt">encrypt a message</a>
+    <a href="/decrypt">decrypt a message</a>
+    {% if current_user.is_anonymous %}
+    <a href="{{ url_for('login') }}">login</a>
+    {% else %}
+    <a href="{{ url_for('user', username=current_user.username) }}">profile</a>
+    <a href="{{ url_for('logout') }}">logout</a>
+    {% endif %}
+=======
+    <h1>Bacon Binary</h1>
+    <a class="link" href="/encrypt">encrypt a message</a>
+    <a class="link" href="/decrypt">decrypt a message</a>
+    <a class="link" href="/bacon">homepage</a>
+
+>>>>>>> origin/master
+</div>
 <hr>
 {% block content %}{% endblock %}
 
