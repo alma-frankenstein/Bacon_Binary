@@ -4,5 +4,4 @@ venv/
 .env
 .idea
 *.pyc
-frankenstein.txt
 images/
